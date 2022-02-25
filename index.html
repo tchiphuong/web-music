@@ -16,23 +16,65 @@
             <span class="visually-hidden">Loading...</span>
         </div>
     </div> -->
-    <div class="container flex flex-col p-2 mx-auto mb-16" id="vn_songs"></div>
+    <div class="container flex flex-col p-2 mx-auto mb-16" id="vn_songs">
+        <!-- <div class="flex flex-col w-full my-3">
+            <div class="px-2 py-1 my-2 text-lg font-bold uppercase border-l-4 border-yellow-500">` + response['songs']['top100_VN'][i]['name'] + `</div>
+            <div class="grid w-full grid-cols-2 gap-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8" id="vn` + i + `">
+                <a class="overflow-hidden shadow-lg cursor-pointer aspect-w-3 aspect-h-4 rounded-xl"  id="music-card" onclick="play('https://aredir.nixcdn.com/NhacCuaTui1013/SaiGonDauLongQua-HuaKimTuyenHoangDuyen-6992977.mp3?st=bDxV4hwH5qqX-vosnmLAuw&amp;e=1631635351','https://avatar-ex-swe.nixcdn.com/song/2021/03/27/d/2/9/1/1616859493571.jpg')">
+                    <img class="object-cover music-card" src="https://avatar-ex-swe.nixcdn.com/song/2021/03/27/d/2/9/1/1616859493571.jpg" alt="Sài Gòn Đau Lòng Quá">
+                    <div class="absolute inset-x-0 flex justify-center bg-white top-3/4 h-1/4">
+                        <div class="flex flex-col justify-center flex-grow w-full p-1 py-3 md:px-4">
+                            <div class="text-xs font-bold text-gray-900 md:text-base lg:text-lg line-clamp-1">Sài Gòn Đau Lòng Quá</div>
+                            <div class="flex text-xs italic text-gray-900 drop-shadow filter md:text-base line-clamp-1">Hứa Kim Tuyền, Hoàng Duyên</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div> -->
+    </div>
     <div class="container flex flex-col p-2 mx-auto mb-16" id="ca_songs"></div>
     <div class="container mx-auto">
-        <div class="fixed transform -translate-x-1/2 left-1/2 bottom-52">
+        <div class="fixed hidden transform -translate-x-1/2 left-1/2 bottom-52">
             <audio controls="controls" autoplay id="mp3-audio"></audio>
             <!-- <audio id="myAudio" controls>
                 <source src="https://aredir.nixcdn.com/YG_Audio1/DduduDdudu-BLACKPINK-6291998.mp3?st=250DxlSOy6LhwVerMov9Eg&e=1625536582" type="audio/mpeg">
             </audio> -->
         </div>
     </div>
-    <div class="fixed inset-x-0 bottom-0 flex items-center justify-center p-2 h-36 backdrop-filter backdrop-blur">
-        <button class="px-3 py-2 m-4 bg-green-500 rounded-sm">Play</button>
-        <button class="px-3 py-2 m-4 bg-green-500 rounded-sm">Pause</button>
+    <div class="fixed bottom-0 z-10 flex items-center w-full h-32 px-3 py-2 backdrop-filter backdrop-blur">
+        <div class="relative flex items-center justify-center overflow-hidden rounded-full w-28 h-28">
+            <img src="https://stc-id.nixcdn.com/v11/images/df-singer-300x300.jpg" class="song-thumb-playing" style="animation-timing-function: linear; animation-duration: 6s !important;">
+        </div>
+        <div class="flex flex-grow h-full ml-3">
+            <div class="flex flex-col px-3 py-2 lg:w-72 w-52">
+                <div class="text-xl font-bold capitalize song-name-current line-clamp-2"></div>
+                <div class="italic creator-current line-clamp-2"></div>
+            </div>
+            <div class="flex flex-col justify-between flex-grow py-1">
+                <div class="flex items-center justify-center py-2">
+                    <div class="px-6 font-bold" id="current-time">19:08</div>
+                    <div class="w-full h-2 bg-gray-200 rounded-full dark:bg-gray-700">
+                        <div class="h-2 bg-blue-600 rounded-full" style="width: 90%"></div>
+                    </div>
+                    <div class="px-6 font-bold">20:10</div>
+                </div>
+                <div class="flex items-end justify-center">
+                    <button class="flex items-center justify-center w-12 h-12 mx-2 bg-gray-300 rounded-full shadow cursor-pointer hover:bg-gray-400"><i class="fas fa-random"></i></button>
+                    <button class="flex items-center justify-center pr-1 mx-2 bg-gray-300 rounded-full shadow cursor-pointer hover:bg-gray-400 w-14 h-14"><i class="fas fa-backward"></i></button>
+                    <!-- <button class="flex items-center justify-center w-16 h-16 mx-2 bg-gray-300 rounded-full shadow cursor-pointer hover:bg-gray-400"><i class="fas fa-play"></i></button> -->
+                    <button class="flex items-center justify-center w-16 h-16 mx-2 bg-gray-300 rounded-full shadow cursor-pointer hover:bg-gray-400"><i class="fas fa-pause"></i></button>
+                    <button class="flex items-center justify-center pl-1 mx-2 bg-gray-300 rounded-full shadow cursor-pointer hover:bg-gray-400 w-14 h-14"><i class="fas fa-forward"></i></button>
+                    <button class="flex items-center justify-center w-12 h-12 mx-2 bg-gray-300 rounded-full shadow cursor-pointer hover:bg-gray-400"><i class="fas fa-repeat"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed inset-x-0 bottom-0 flex items-center justify-center h-32 p-2 opacity-30" id="backdrop">
     </div>
     <!-- <div class="absolute inset-x-0 flex items-center justify-center backdrop-filter backdrop-blur top-3/4 h-1/4"></div> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/playmusic.js"></script>
 </body>
+
 </html>
