@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="relative bg-gray-50">
+    <!-- <div class="flex items-center justify-center">
+        <div class="inline-block w-8 h-8 border-4 rounded-full spinner-border animate-spin" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> -->
+    <div class="container flex flex-col p-2 mx-auto mb-16" id="vn_songs"></div>
+    <div class="container flex flex-col p-2 mx-auto mb-16" id="ca_songs"></div>
+    <div class="container mx-auto">
+        <div class="fixed transform -translate-x-1/2 left-1/2 bottom-52">
+            <audio controls="controls" autoplay id="mp3-audio"></audio>
+            <!-- <audio id="myAudio" controls>
+                <source src="https://aredir.nixcdn.com/YG_Audio1/DduduDdudu-BLACKPINK-6291998.mp3?st=250DxlSOy6LhwVerMov9Eg&e=1625536582" type="audio/mpeg">
+            </audio> -->
+        </div>
+    </div>
+    <div class="fixed inset-x-0 bottom-0 flex items-center justify-center p-2 h-36 backdrop-filter backdrop-blur">
+        <button class="px-3 py-2 m-4 bg-green-500 rounded-sm">Play</button>
+        <button class="px-3 py-2 m-4 bg-green-500 rounded-sm">Pause</button>
+    </div>
+    <!-- <div class="absolute inset-x-0 flex items-center justify-center backdrop-filter backdrop-blur top-3/4 h-1/4"></div> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/playmusic.js"></script>
+</body>
+</html>
